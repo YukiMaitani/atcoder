@@ -1,0 +1,7 @@
+{
+    "command-runner.commands": {
+        "oj test": "cd ${fileDirname} && oj t -c \"python3 ${fileBasename}\" -d tests",
+        "acc submit": "cd ${fileDirname} && echo abc$(basename $(pwd)) | acc s ${file} -- --guess-python-interpreter pypy",
+        "execute python": "cd ${fileDirname} && python3 ${fileBasename}"
+    }
+}
