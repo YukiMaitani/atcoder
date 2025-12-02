@@ -13,7 +13,21 @@ def pn(): print("No")
 def pyn(yes): py() if yes else pn()
 
 def main():
-  ans = 0
-  print(ans)
+  n, x = iis()
+  A = iil()
+  l,r = 0, n-1
+  ans = -1
+  # 二分探索
+  while l <= r:
+    m = (l + r) // 2
+    if A[m] < x:
+      l = m + 1
+    elif A[m] > x:
+      r = m -1
+    else:
+      ans = m
+      break
+
+  print(ans+1)
 
 main()

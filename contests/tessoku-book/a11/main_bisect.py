@@ -1,6 +1,7 @@
 import sys
 import math
 from collections import deque, defaultdict
+from bisect import bisect
 input = sys.stdin.readline
 
 def s(): return input().rstrip()
@@ -13,13 +14,8 @@ def pn(): print("No")
 def pyn(yes): py() if yes else pn()
 
 def main():
-  n, k = iis()
-  ans = 0
-  for a in range(1, n+1):
-    for b in range(1, n+1):
-      c = k - a - b
-      if 1 <= c <= n:
-        ans += 1
-  print(ans)
+  n, x = iis()
+  # 2分探索 bisect
+  print(bisect(iil(), x))
 
 main()
