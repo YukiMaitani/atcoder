@@ -13,7 +13,17 @@ def pn(): print("No")
 def pyn(yes): py() if yes else pn()
 
 def main():
-  ans = 0
-  print(ans)
+  n, k = iis()
+  A = iil()
+  l = 0
+  r = 10**9
+  while l < r:
+    m = (l + r) // 2
+    c = sum(m//a for a in A)
+    if c < k:
+      l = m+1
+    else:
+      r = m
+  print(l)
 
 main()
