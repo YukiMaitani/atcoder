@@ -13,7 +13,17 @@ def pn(): print("No")
 def pyn(yes): py() if yes else pn()
 
 def main():
+  n, k = iis()
+  A = iil()
+  R = [0]
+  for i, a in enumerate(A[:n-1]):
+    r = R[i]
+    while r < n-1 and A[r+1] - a <= k:
+      r += 1
+    R.append(r)
   ans = 0
+  for i, r in enumerate(R[1:]):
+    ans += r -i
   print(ans)
 
 main()
